@@ -11,9 +11,7 @@ The purpose of this project is to create a website that takes a users age and a 
 7. Required functionality was in place by the deadline.
 8. Project demonstrates understanding of week's concepts. If prompted, you are able to discuss your code with an instructor using correct terminology.
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-
-The first thing this project will need to do is create an object that contains key-value pairs of planets and how many days (compared to earth) are in a year on said planet.
+##The first thing this project will need to do is create an object that contains key-value pairs of planets and how many days (compared to earth) are in a year on said planet.
 **Planet Year Length**
 |Planet|Days|
 |------|----|
@@ -34,3 +32,5 @@ _We'll say the average human lifespan is 80 years_
 1. Does user smoke? => if so - 20 years from lifespan
 2. Does user exercise? => if so + 10 years to lifespan
 3. Does user have family history of heart disease/cancer? => if so - 10 years from lifespan
+
+Now we have all the information we need from a user

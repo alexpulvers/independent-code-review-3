@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <script src="js/jquery-3.5.1.js"></script>
+  <script src="js/scripts.js"></script>
+
+  <head>
+    <title>Planets age calculator</title>
+    <h1>
+      This calculates your age on other planets in the Solar system!
+    </h1>
+  </head>
+
+  <body>
+    <p>
+      Before we start please answer these questions:
+    </p>
+    <div class="container">
+      <div>
+        Do you smoke?
+        <select class="form-control" id="smoker">
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        Do you exercise?
+        <select class="form-control" id="exercise">
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        Do you have a family history of heart disease or cancer?
+        <select class="form-control" id="disease">
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+      </div>
+      <br />
+      <form id="get-info">
+        <input id="user-age" type="text" />
+        <button type="submit" class="btn">See my age</button>
+      </form>
+    </div>
+  </body>
+</html>

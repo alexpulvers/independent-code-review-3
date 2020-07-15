@@ -8,3 +8,11 @@ export const Planets = {
   uranus: 30687,
   neptune: 60190,
 };
+
+function reportAge(age) {
+  for (const property in Planets) {
+    console.log(
+      `Your age on ${property} is: ${age * (365 / Planets[property])}.`
+    );
+  }
+}
