@@ -9,11 +9,18 @@ export const Planets = {
   neptune: 60190,
 };
 
-function lifeExpectancy(age, smoker, exercise, disease) {
-  for (const property in Planets) {
-    let expectancy = 80;
 
-    if (smoker == "yes") {
+
+Export function UserLifeStyle(age, smoker, exercise, disease) {
+  this.age = age;
+  this.smoker = smoker;
+  this.exercise = exercise;
+  this.disease = disease;
+}
+
+getExpectancy.prototype.UserLifeStyle = function () {
+  let expectancy = 80;
+  if (smoker == "yes") {
       expectancy = expectancy - 20;
     } else if (exercise == "yes") {
       expectancy = expectancy + 10;
@@ -22,15 +29,20 @@ function lifeExpectancy(age, smoker, exercise, disease) {
     } else {
       expectancy = 80;
     }
-  }
 }
 
-export function reportAge(age) {
+export function reportAge() {
+  let age = 20;
+  let planetAge = [];
   for (const property in Planets) {
     console.log(
       `Your age on ${property} is: ${age * (365 / Planets[property])}.`
     );
-    let planetAge = age * (365 / Planets[property]);
-    return planetAge;
+    planetAge.push(age * (365 / Planets[property]));
+    //create an object using constructor, instead of an object and call properties
   }
+  console.log(planetAge);
+  return planetAge;
 }
+
+reportAge();
