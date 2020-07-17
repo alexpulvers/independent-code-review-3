@@ -30,7 +30,7 @@ export function reportAge(age) {
     console.log(
       `Your age on ${property} is: ${age * (365 / Planets[property])}.`
     );
-    age = age * (365 / Planets[property]);
-    return age;
+    let planetAge = age * (365 / Planets[property]);
+    return planetAge;
   }
 }
