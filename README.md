@@ -33,4 +33,10 @@ _We'll say the average human lifespan is 80 years_
 2. Does user exercise? => if so + 10 years to lifespan
 3. Does user have family history of heart disease/cancer? => if so - 10 years from lifespan
 
-Now we have all the information we need from a user
+Now we have all the information we need from a user. We need to write a function returns the age of the user on each planet.
+
+**Rules for Return Age Function**
+
+1. it needs to take the argument _age_ from the user input.
+2. it needs to loop through each property in our **Planets** object
+3. for every property in **Planets**, it needs to return the user's age * (*Earth's Solar Year in Days* / *Planets Solar Year in Days\*)
