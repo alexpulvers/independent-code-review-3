@@ -9,15 +9,16 @@ export const Planets = {
   neptune: 60190,
 };
 
-export function UserLifeStyle(age, smoker, exercise, disease) {
-  this.age = age;
-  this.smoker = smoker;
-  this.exercise = exercise;
-  this.disease = disease;
+export class UserLifeStyle {
+  constructor(age, smoker, exercise, disease) {
+    this.age = age;
+    this.smoker = smoker;
+    this.exercise = exercise;
+    this.disease = disease;
+  }
 }
-
-getExpectancy.prototype.UserLifeStyle = function () {
-  let expectancy = 80;
+let expectancy = 80;
+export function getExpectancy(smoker, exercise, disease, expectancy) {
   if (smoker == "yes") {
     expectancy = expectancy - 20;
   } else if (exercise == "yes") {
@@ -27,7 +28,8 @@ getExpectancy.prototype.UserLifeStyle = function () {
   } else {
     expectancy = 80;
   }
-};
+  return expectancy;
+}
 
 export function reportAge() {
   let age = 20;
