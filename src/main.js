@@ -72,4 +72,8 @@ $(document).ready(function () {
     console.log(newUser);
     $("#user-age").val(" ");
   });
+  $(".container").hide();
+  $("#toggle").click(function () {
+    $(".container").toggle("slow", function () {});
+  });
 });

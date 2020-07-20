@@ -12,9 +12,10 @@ body {
   text-align: center;
   color: aliceblue;
 }
+
 .container {
   display: inline-block;
-  text-align: center;
+  text-align: left;
   width: flex;
   height: flex;
   color: black;
