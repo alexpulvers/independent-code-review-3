@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 export const Planets = {
   mercury: 88,
   venus: 225,
@@ -9,39 +11,65 @@ export const Planets = {
   neptune: 60190,
 };
 
-export class UserLifeStyle {
-  constructor(age, smoker, exercise, disease) {
-    this.age = age;
-    this.smoker = smoker;
-    this.exercise = exercise;
-    this.disease = disease;
-  }
+export function UserLifeStyle(age, smoker, exercise, disease, expectancy) {
+  this.age = age;
+  this.smoker = smoker;
+  this.exercise = exercise;
+  this.disease = disease;
+  this.expectancy = expectancy;
 }
-let expectancy = 80;
-export function getExpectancy(smoker, exercise, disease, expectancy) {
-  if (smoker == "yes") {
+UserLifeStyle.prototype.getExpectancy = function () {
+  let expectancy = 80;
+  if (this.smoker == "yes") {
     expectancy = expectancy - 20;
-  } else if (exercise == "yes") {
+  } else if (this.exercise == "yes") {
     expectancy = expectancy + 10;
-  } else if (disease == "yes") {
+  } else if (this.disease == "yes") {
     expectancy = expectancy - 10;
   } else {
     expectancy = 80;
   }
-  return expectancy;
-}
-
-export function reportAge() {
-  let age = 20;
-  let planetAge = [];
   for (const property in Planets) {
-    console.log(
-      `Your age on ${property} is: ${age * (365 / Planets[property])}.`
+    if (this.age * (365 / Planets[property]) >= expectancy) {
+      $("#results").append(
+        `You have lived ${
+          this.age * (365 / Planets[property]) - expectancy
+        } years longer than expected on ${property}!! Congratulations!` + "<br>"
+      );
+    } else if (this.age * (365 / Planets[property]) < expectancy) {
+      $("#results").append(
+        `You are ${
+          expectancy - this.age * (365 / Planets[property])
+        } Earth years away from death on ${property}.` + "<br>"
+      );
+    }
+  }
+};
+
+export function reportAge(age) {
+  let planetAge = [];
+  $("#results").html(" ");
+  for (const property in Planets) {
+    $("#results").append(
+      `Your age on ${property} is: ${age * (365 / Planets[property])}.` + "<br>"
     );
     planetAge.push(age * (365 / Planets[property]));
   }
-  console.log(planetAge);
   return planetAge;
 }
 
-reportAge();
+$(document).ready(function () {
+  $("#get-info").submit(function (event) {
+    event.preventDefault();
+    let smoker = $("#smoker").val();
+    let exercise = $("#exercise").val();
+    let disease = $("#disease").val();
+    let age = $("#user-age").val();
+    reportAge(age);
+    let newUser = new UserLifeStyle(age, smoker, exercise, disease);
+    console.log(smoker, exercise, disease, age);
+    newUser.getExpectancy();
+    console.log(newUser);
+    $("#user-age").val(" ");
+  });
+});

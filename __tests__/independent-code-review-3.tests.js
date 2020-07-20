@@ -1,6 +1,6 @@
 import { reportAge } from "./../src/main.js";
 import UserLifeStyle from "./../src/main.js";
-import { getExpectancy } from "./../src/main.js";
+
 describe("reportAge()", () => {
   test("should return a value for each property in reportAge()", () => {
     let age = 20;
@@ -15,7 +15,8 @@ describe("getExpectancy", () => {
     let smoker = "yes";
     let exercise = "yes";
     let disease = "yes";
-    let newUser = getExpectancy(smoker, exercise, disease, expectancy);
+    let newUser = UserLifeStyle(smoker, exercise, disease, expectancy);
+    newUser.getExpectancy();
     expect(newUser).toEqual(60);
   });
 });
