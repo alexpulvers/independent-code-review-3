@@ -1,5 +1,5 @@
 import $ from "jquery";
-
+import "./styles.css";
 export const Planets = {
   mercury: 88,
   venus: 225,

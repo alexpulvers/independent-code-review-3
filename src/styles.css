@@ -1,0 +1,25 @@
+h1 {
+  color: aliceblue;
+  text-align: center;
+  text-shadow: 3px 2px rgb(67, 67, 129);
+}
+
+body {
+  background-image: url(https://wallpaperplay.com/walls/full/2/f/b/298878.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  color: aliceblue;
+}
+.container {
+  display: inline-block;
+  text-align: center;
+  width: flex;
+  height: flex;
+  color: black;
+  border-style: double;
+  border-width: 400;
+  background-color: aliceblue;
+  border-color: black;
+}
